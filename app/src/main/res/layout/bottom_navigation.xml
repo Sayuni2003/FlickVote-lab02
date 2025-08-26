@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/bottom_navigation"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal"
+    android:background="#1F2547"
+    android:paddingVertical="8dp">
+
+    <TextView
+        android:id="@+id/nav_home"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:drawableTop="@drawable/home"
+        android:gravity="center"
+        android:text="Home"
+        android:textColor="#C9CCDF"/>
+
+    <TextView
+        android:id="@+id/nav_voting"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:drawableTop="@drawable/voting"
+        android:gravity="center"
+        android:text="Voting"
+        android:textColor="#C9CCDF"/>
+
+    <TextView
+        android:id="@+id/nav_profile"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:drawableTop="@drawable/profile"
+        android:gravity="center"
+        android:text="Profile"
+        android:textColor="#C9CCDF"/>
+</LinearLayout>
