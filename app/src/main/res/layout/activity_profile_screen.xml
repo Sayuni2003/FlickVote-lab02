@@ -1,0 +1,156 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#0F1226"
+    tools:context=".ProfileActivity">
+
+    <!-- Header Title -->
+    <TextView
+        android:id="@+id/tv_header_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:text="Profile"
+        android:textColor="#FFFFFF"
+        android:textSize="22sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <!-- Scrollable content area -->
+    <ScrollView
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginTop="16dp"
+        app:layout_constraintTop_toBottomOf="@id/tv_header_title"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:gravity="center_horizontal"
+            android:padding="24dp">
+
+            <!-- Profile Picture -->
+            <com.google.android.material.imageview.ShapeableImageView
+                android:id="@+id/img_profile"
+                android:layout_width="120dp"
+                android:layout_height="120dp"
+                android:padding="5dp"
+                android:scaleType="centerCrop"
+                android:src="@drawable/profilepic"
+                app:shapeAppearanceOverlay="@style/ShapeAppearance.Material3.Corner.Full"
+                app:strokeColor="#1F2547"
+                app:strokeWidth="5dp" />
+
+            <!-- User Name -->
+            <TextView
+                android:id="@+id/tv_user_name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:text="Sayuni Manju Sri"
+                android:textColor="#FFFFFF"
+                android:textSize="24sp" />
+
+            <!-- User Email -->
+            <TextView
+                android:id="@+id/tv_user_email"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="4dp"
+                android:text="sayuni123@gmail.com"
+                android:textColor="#C9CCDF"
+                android:textSize="16sp" />
+
+            <!-- Settings Card -->
+            <com.google.android.material.card.MaterialCardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="32dp"
+                app:cardBackgroundColor="#1F2547"
+                app:cardCornerRadius="16dp"
+                app:strokeWidth="0dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:padding="12dp">
+
+                    <!-- Edit Profile Option -->
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:drawableStart="@drawable/profile"
+                        android:drawablePadding="16dp"
+                        android:gravity="center_vertical"
+                        android:padding="12dp"
+                        android:text="Edit Profile"
+                        android:textColor="#C9CCDF"
+                        android:textSize="16sp"
+                        app:drawableTint="#C9CCDF" />
+
+                    <!-- Settings Option -->
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:drawableStart="@drawable/settings"
+                        android:drawablePadding="16dp"
+                        android:gravity="center_vertical"
+                        android:padding="12dp"
+                        android:text="Settings"
+                        android:textColor="#C9CCDF"
+                        android:textSize="16sp"
+                        app:drawableTint="#C9CCDF" />
+
+                    <!-- Log Out Option -->
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:drawableStart="@drawable/logout"
+                        android:drawablePadding="16dp"
+                        android:gravity="center_vertical"
+                        android:padding="12dp"
+                        android:text="Log Out"
+                        android:textColor="#FF4D6D"
+                        android:textSize="16sp"
+                        app:drawableTint="#FF4D6D" />
+                </LinearLayout>
+            </com.google.android.material.card.MaterialCardView>
+
+            <!-- Call to Action Button -->
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btn_upgrade"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="24dp"
+                android:backgroundTint="#FF4D6D"
+                android:paddingVertical="14dp"
+                android:text="Upgrade to Pro"
+                android:textAllCaps="false"
+                android:textColor="#FFFFFF"
+                android:textSize="18sp"
+                app:cornerRadius="16dp" />
+
+        </LinearLayout>
+    </ScrollView>
+
+    <include
+        android:id="@+id/bottom_nav_bar"
+        layout="@layout/bottom_navigation"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"/>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

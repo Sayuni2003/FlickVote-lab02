@@ -4,367 +4,377 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:id="@+id/main"
     android:orientation="vertical"
-    android:paddingTop="24dp"
     android:background="#000000">
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Your Groups"
-        android:textColor="#FFFFFF"
-        android:textSize="30sp"
-        android:textStyle="bold"
-        android:layout_gravity="center_horizontal"
-        android:padding="16dp"/>
-
-    <View
+    <!-- Scrollable area -->
+    <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="1dp"
-        android:background="#444444"
-        android:layout_marginLeft="16dp"
-        android:layout_marginRight="16dp"/>
+        android:layout_height="0dp"
+        android:layout_weight="1">
 
-    <!-- 1st card -->
-    <androidx.cardview.widget.CardView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_margin="16dp"
-        app:cardBackgroundColor="#1C1C2A"
-        app:cardCornerRadius="16dp"
-        app:cardElevation="4dp">
-
-        <androidx.constraintlayout.widget.ConstraintLayout
+        <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:padding="16dp">
+            android:orientation="vertical"
+            android:paddingTop="24dp">
 
+            <!-- All your TextView and CardViews go here (no bottom nav here) -->
             <TextView
-                android:id="@+id/groupTitle1"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Weekend Movie Buffs"
-                android:textColor="@android:color/white"
-                android:textSize="20sp"
+                android:text="Your Groups"
+                android:textColor="#FFFFFF"
+                android:textSize="30sp"
                 android:textStyle="bold"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent" />
+                android:layout_gravity="center_horizontal"
+                android:padding="16dp" />
 
-            <Button
-                android:id="@+id/statusButton1"
-                android:layout_width="wrap_content"
+            <!-- all CardViews (group cards) ... -->
+            <androidx.cardview.widget.CardView
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="8dp"
-                android:background="@drawable/pill_button"
-                app:backgroundTint="@null"
-                android:minWidth="0dp"
-                android:minHeight="0dp"
-                android:paddingHorizontal="12dp"
-                android:paddingVertical="4dp"
-                android:text="Active"
-                android:textAllCaps="false"
-                android:textColor="@android:color/white"
-                android:textSize="12sp"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/groupTitle1" />
+                android:layout_margin="16dp"
+                app:cardBackgroundColor="#1C1C2A"
+                app:cardCornerRadius="16dp"
+                app:cardElevation="4dp">
 
-            <TextView
-                android:id="@+id/groupDescription1"
-                android:layout_width="0dp"
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:padding="16dp">
+
+                    <TextView
+                        android:id="@+id/groupTitle1"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Weekend Movie Buffs"
+                        android:textColor="@android:color/white"
+                        android:textSize="20sp"
+                        android:textStyle="bold"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <Button
+                        android:id="@+id/statusButton1"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="8dp"
+                        android:background="@drawable/pill_button"
+                        app:backgroundTint="@null"
+                        android:minWidth="0dp"
+                        android:minHeight="0dp"
+                        android:paddingHorizontal="12dp"
+                        android:paddingVertical="4dp"
+                        android:text="Active"
+                        android:textAllCaps="false"
+                        android:textColor="@android:color/white"
+                        android:textSize="12sp"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/groupTitle1" />
+
+                    <TextView
+                        android:id="@+id/groupDescription1"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="12dp"
+                        android:text="A group for serious film enthusiasts, meeting weekly for deep dives and discussions."
+                        android:textColor="#B0B0B0"
+                        android:textSize="14sp"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/statusButton1" />
+
+                    <TextView
+                        android:id="@+id/memberCount1"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="16dp"
+                        android:drawablePadding="4dp"
+                        android:gravity="center_vertical"
+                        android:text="8 Members"
+                        android:textColor="@android:color/white"
+                        android:textSize="14sp"
+                        app:drawableStartCompat="@drawable/members"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/groupDescription1" />
+
+                    <Button
+                        android:id="@+id/viewGroupButton1"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/pill_button_square"
+                        app:backgroundTint="@null"
+                        android:text="View Group"
+                        android:textAllCaps="false"
+                        android:textColor="@android:color/white"
+                        app:layout_constraintBottom_toBottomOf="@id/memberCount1"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintTop_toTopOf="@id/memberCount1" />
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+            </androidx.cardview.widget.CardView>
+
+            <!-- 2st card -->
+            <androidx.cardview.widget.CardView
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="12dp"
-                android:text="A group for serious film enthusiasts, meeting weekly for deep dives and discussions."
-                android:textColor="#B0B0B0"
-                android:textSize="14sp"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/statusButton1" />
+                android:layout_margin="16dp"
+                app:cardBackgroundColor="#1C1C2A"
+                app:cardCornerRadius="16dp"
+                app:cardElevation="4dp">
 
-            <TextView
-                android:id="@+id/memberCount1"
-                android:layout_width="wrap_content"
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:padding="16dp">
+
+                    <TextView
+                        android:id="@+id/groupTitle2"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Family Time"
+                        android:textColor="@android:color/white"
+                        android:textSize="20sp"
+                        android:textStyle="bold"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <Button
+                        android:id="@+id/statusButton2"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="8dp"
+                        android:background="@drawable/pill_button"
+                        app:backgroundTint="@null"
+                        android:minWidth="0dp"
+                        android:minHeight="0dp"
+                        android:paddingHorizontal="12dp"
+                        android:paddingVertical="4dp"
+                        android:text="Active"
+                        android:textAllCaps="false"
+                        android:textColor="@android:color/white"
+                        android:textSize="12sp"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/groupTitle2" />
+
+                    <TextView
+                        android:id="@+id/groupDescription2"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="12dp"
+                        android:text="Bringing families together to enjoy fun and relaxing movie nights."
+                        android:textColor="#B0B0B0"
+                        android:textSize="14sp"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/statusButton2" />
+
+                    <TextView
+                        android:id="@+id/memberCount2"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="16dp"
+                        android:drawablePadding="4dp"
+                        android:gravity="center_vertical"
+                        android:text="5 Members"
+                        android:textColor="@android:color/white"
+                        android:textSize="14sp"
+                        app:drawableStartCompat="@drawable/members"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/groupDescription2" />
+
+                    <Button
+                        android:id="@+id/viewGroupButton2"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/pill_button_square"
+                        app:backgroundTint="@null"
+                        android:text="View Group"
+                        android:textAllCaps="false"
+                        android:textColor="@android:color/white"
+                        app:layout_constraintBottom_toBottomOf="@id/memberCount2"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintTop_toTopOf="@id/memberCount2" />
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+            </androidx.cardview.widget.CardView>
+
+            <!-- 3st card -->
+            <androidx.cardview.widget.CardView
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="16dp"
-                android:drawablePadding="4dp"
-                android:gravity="center_vertical"
-                android:text="8 Members"
-                android:textColor="@android:color/white"
-                android:textSize="14sp"
-                app:drawableStartCompat="@drawable/members"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/groupDescription1" />
+                android:layout_margin="16dp"
+                app:cardBackgroundColor="#1C1C2A"
+                app:cardCornerRadius="16dp"
+                app:cardElevation="4dp">
 
-            <Button
-                android:id="@+id/viewGroupButton1"
-                android:layout_width="wrap_content"
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:padding="16dp">
+
+                    <TextView
+                        android:id="@+id/groupTitle3"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Movie Night Crew"
+                        android:textColor="@android:color/white"
+                        android:textSize="20sp"
+                        android:textStyle="bold"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <Button
+                        android:id="@+id/statusButton3"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="8dp"
+                        android:background="@drawable/pill_button"
+                        app:backgroundTint="@null"
+                        android:minWidth="0dp"
+                        android:minHeight="0dp"
+                        android:paddingHorizontal="12dp"
+                        android:paddingVertical="4dp"
+                        android:text="Active"
+                        android:textAllCaps="false"
+                        android:textColor="@android:color/white"
+                        android:textSize="12sp"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/groupTitle3" />
+
+                    <TextView
+                        android:id="@+id/groupDescription3"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="12dp"
+                        android:text="Your go-to crew for laughs, snacks, and movie marathons."
+                        android:textColor="#B0B0B0"
+                        android:textSize="14sp"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/statusButton3" />
+
+                    <TextView
+                        android:id="@+id/memberCount3"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="16dp"
+                        android:drawablePadding="4dp"
+                        android:gravity="center_vertical"
+                        android:text="10 Members"
+                        android:textColor="@android:color/white"
+                        android:textSize="14sp"
+                        app:drawableStartCompat="@drawable/members"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/groupDescription3" />
+
+                    <Button
+                        android:id="@+id/viewGroupButton3"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/pill_button_square"
+                        app:backgroundTint="@null"
+                        android:text="View Group"
+                        android:textAllCaps="false"
+                        android:textColor="@android:color/white"
+                        app:layout_constraintBottom_toBottomOf="@id/memberCount3"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintTop_toTopOf="@id/memberCount3" />
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+            </androidx.cardview.widget.CardView>
+
+            <!-- 4st card -->
+            <androidx.cardview.widget.CardView
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:background="@drawable/pill_button_square"
-                app:backgroundTint="@null"
-                android:text="View Group"
-                android:textAllCaps="false"
-                android:textColor="@android:color/white"
-                app:layout_constraintBottom_toBottomOf="@id/memberCount1"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintTop_toTopOf="@id/memberCount1" />
+                android:layout_margin="16dp"
+                app:cardBackgroundColor="#1C1C2A"
+                app:cardCornerRadius="16dp"
+                app:cardElevation="4dp">
 
-        </androidx.constraintlayout.widget.ConstraintLayout>
-    </androidx.cardview.widget.CardView>
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:padding="16dp">
 
-    <!-- 2st card -->
-    <androidx.cardview.widget.CardView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_margin="16dp"
-        app:cardBackgroundColor="#1C1C2A"
-        app:cardCornerRadius="16dp"
-        app:cardElevation="4dp">
+                    <TextView
+                        android:id="@+id/groupTitle"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Popcorn Pals"
+                        android:textColor="@android:color/white"
+                        android:textSize="20sp"
+                        android:textStyle="bold"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
 
-        <androidx.constraintlayout.widget.ConstraintLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:padding="16dp">
+                    <Button
+                        android:id="@+id/statusButton"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="8dp"
+                        android:background="@drawable/pill_button"
+                        app:backgroundTint="@null"
+                        android:minWidth="0dp"
+                        android:minHeight="0dp"
+                        android:paddingHorizontal="12dp"
+                        android:paddingVertical="4dp"
+                        android:text="Active"
+                        android:textAllCaps="false"
+                        android:textColor="@android:color/white"
+                        android:textSize="12sp"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/groupTitle" />
 
-            <TextView
-                android:id="@+id/groupTitle2"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Family Time"
-                android:textColor="@android:color/white"
-                android:textSize="20sp"
-                android:textStyle="bold"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent" />
+                    <TextView
+                        android:id="@+id/groupDescription"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="12dp"
+                        android:text="Movie nights made better with friends and snacks."
+                        android:textColor="#B0B0B0"
+                        android:textSize="14sp"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/statusButton" />
 
-            <Button
-                android:id="@+id/statusButton2"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="8dp"
-                android:background="@drawable/pill_button"
-                app:backgroundTint="@null"
-                android:minWidth="0dp"
-                android:minHeight="0dp"
-                android:paddingHorizontal="12dp"
-                android:paddingVertical="4dp"
-                android:text="Active"
-                android:textAllCaps="false"
-                android:textColor="@android:color/white"
-                android:textSize="12sp"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/groupTitle2" />
+                    <TextView
+                        android:id="@+id/memberCount"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="16dp"
+                        android:drawablePadding="4dp"
+                        android:gravity="center_vertical"
+                        android:text="4 Members"
+                        android:textColor="@android:color/white"
+                        android:textSize="14sp"
+                        app:drawableStartCompat="@drawable/members"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/groupDescription" />
 
-            <TextView
-                android:id="@+id/groupDescription2"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="12dp"
-                android:text="Bringing families together to enjoy fun and relaxing movie nights."
-                android:textColor="#B0B0B0"
-                android:textSize="14sp"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/statusButton2" />
+                    <Button
+                        android:id="@+id/viewGroupButton"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/pill_button_square"
+                        app:backgroundTint="@null"
+                        android:text="View Group"
+                        android:textAllCaps="false"
+                        android:textColor="@android:color/white"
+                        app:layout_constraintBottom_toBottomOf="@id/memberCount"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintTop_toTopOf="@id/memberCount" />
 
-            <TextView
-                android:id="@+id/memberCount2"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="16dp"
-                android:drawablePadding="4dp"
-                android:gravity="center_vertical"
-                android:text="5 Members"
-                android:textColor="@android:color/white"
-                android:textSize="14sp"
-                app:drawableStartCompat="@drawable/members"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/groupDescription2" />
+                </androidx.constraintlayout.widget.ConstraintLayout>
+            </androidx.cardview.widget.CardView>
 
-            <Button
-                android:id="@+id/viewGroupButton2"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:background="@drawable/pill_button_square"
-                app:backgroundTint="@null"
-                android:text="View Group"
-                android:textAllCaps="false"
-                android:textColor="@android:color/white"
-                app:layout_constraintBottom_toBottomOf="@id/memberCount2"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintTop_toTopOf="@id/memberCount2" />
+        </LinearLayout>
+    </ScrollView>
 
-        </androidx.constraintlayout.widget.ConstraintLayout>
-    </androidx.cardview.widget.CardView>
-
-    <!-- 3st card -->
-    <androidx.cardview.widget.CardView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_margin="16dp"
-        app:cardBackgroundColor="#1C1C2A"
-        app:cardCornerRadius="16dp"
-        app:cardElevation="4dp">
-
-        <androidx.constraintlayout.widget.ConstraintLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:padding="16dp">
-
-            <TextView
-                android:id="@+id/groupTitle3"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Movie Night Crew"
-                android:textColor="@android:color/white"
-                android:textSize="20sp"
-                android:textStyle="bold"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent" />
-
-            <Button
-                android:id="@+id/statusButton3"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="8dp"
-                android:background="@drawable/pill_button"
-                app:backgroundTint="@null"
-                android:minWidth="0dp"
-                android:minHeight="0dp"
-                android:paddingHorizontal="12dp"
-                android:paddingVertical="4dp"
-                android:text="Active"
-                android:textAllCaps="false"
-                android:textColor="@android:color/white"
-                android:textSize="12sp"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/groupTitle3" />
-
-            <TextView
-                android:id="@+id/groupDescription3"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="12dp"
-                android:text="Your go-to crew for laughs, snacks, and movie marathons."
-                android:textColor="#B0B0B0"
-                android:textSize="14sp"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/statusButton3" />
-
-            <TextView
-                android:id="@+id/memberCount3"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="16dp"
-                android:drawablePadding="4dp"
-                android:gravity="center_vertical"
-                android:text="10 Members"
-                android:textColor="@android:color/white"
-                android:textSize="14sp"
-                app:drawableStartCompat="@drawable/members"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/groupDescription3" />
-
-            <Button
-                android:id="@+id/viewGroupButton3"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:background="@drawable/pill_button_square"
-                app:backgroundTint="@null"
-                android:text="View Group"
-                android:textAllCaps="false"
-                android:textColor="@android:color/white"
-                app:layout_constraintBottom_toBottomOf="@id/memberCount3"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintTop_toTopOf="@id/memberCount3" />
-
-        </androidx.constraintlayout.widget.ConstraintLayout>
-    </androidx.cardview.widget.CardView>
-
-    <!-- 4st card -->
-    <androidx.cardview.widget.CardView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_margin="16dp"
-        app:cardBackgroundColor="#1C1C2A"
-        app:cardCornerRadius="16dp"
-        app:cardElevation="4dp">
-
-        <androidx.constraintlayout.widget.ConstraintLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:padding="16dp">
-
-            <TextView
-                android:id="@+id/groupTitle"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Popcorn Pals"
-                android:textColor="@android:color/white"
-                android:textSize="20sp"
-                android:textStyle="bold"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent" />
-
-            <Button
-                android:id="@+id/statusButton"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="8dp"
-                android:background="@drawable/pill_button"
-                app:backgroundTint="@null"
-                android:minWidth="0dp"
-                android:minHeight="0dp"
-                android:paddingHorizontal="12dp"
-                android:paddingVertical="4dp"
-                android:text="Active"
-                android:textAllCaps="false"
-                android:textColor="@android:color/white"
-                android:textSize="12sp"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/groupTitle" />
-
-            <TextView
-                android:id="@+id/groupDescription"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="12dp"
-                android:text="Movie nights made better with friends and snacks."
-                android:textColor="#B0B0B0"
-                android:textSize="14sp"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/statusButton" />
-
-            <TextView
-                android:id="@+id/memberCount"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="16dp"
-                android:drawablePadding="4dp"
-                android:gravity="center_vertical"
-                android:text="4 Members"
-                android:textColor="@android:color/white"
-                android:textSize="14sp"
-                app:drawableStartCompat="@drawable/members"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/groupDescription" />
-
-            <Button
-                android:id="@+id/viewGroupButton"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:background="@drawable/pill_button_square"
-                app:backgroundTint="@null"
-                android:text="View Group"
-                android:textAllCaps="false"
-                android:textColor="@android:color/white"
-                app:layout_constraintBottom_toBottomOf="@id/memberCount"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintTop_toTopOf="@id/memberCount" />
-
-        </androidx.constraintlayout.widget.ConstraintLayout>
-    </androidx.cardview.widget.CardView>
-
+    <!-- Fixed bottom navigation -->
     <include
         android:id="@+id/bottom_nav_bar"
         layout="@layout/bottom_navigation"

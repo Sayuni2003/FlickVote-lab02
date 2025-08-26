@@ -5,6 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#000000"
+    android:id="@+id/main"
     android:orientation="vertical"
     tools:context=".MainActivity">
 
@@ -88,6 +89,7 @@
                         android:layout_weight="1" />
 
                     <ImageButton
+                        android:id="@+id/likeButton"
                         android:layout_width="56dp"
                         android:layout_height="56dp"
                         android:background="@drawable/circle_green"
